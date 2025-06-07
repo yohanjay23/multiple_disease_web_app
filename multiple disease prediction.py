@@ -69,6 +69,7 @@ if (selected == "Diabetes Prediction"):
     
     if st.button ('Diabetes Test Result'):
         diab_prediction = diabetes_model.predict([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age])
+        diab_prediction.reshape(-1, 1)
 
         if diab_prediction[0] == 1:
             
