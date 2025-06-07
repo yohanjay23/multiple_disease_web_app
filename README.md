@@ -11,6 +11,7 @@ Parkinson's Disease
 The goal of this project is to demonstrate how AI and data science can be used to build intuitive healthcare tools that can assist in early detection and awareness.
 
 🔧 Features
+
 ⚡ Real-time predictions using pre-trained ML models
 
 📊 User-friendly interface built with Streamlit
@@ -22,6 +23,7 @@ The goal of this project is to demonstrate how AI and data science can be used t
 💡 Ideal for learning ML deployment and healthcare data usage
 
 🛠️ Tech Stack
+
 Python
 
 Streamlit
