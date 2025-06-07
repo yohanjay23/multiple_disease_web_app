@@ -9,11 +9,11 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open(r"C:/Users/HP/Desktop/Multiple Disease Prediction System/Diabetes_model.sav", "rb"))
+diabetes_model = pickle.load(open("C:/Users/HP/Desktop/Multiple Disease Prediction System/Diabetes_model.sav", "rb"))
 
-heart_disease_model = pickle.load(open(r"C:/Users/HP/Desktop/Multiple Disease Prediction System/Heart_disease_model.sav", "rb"))
+heart_disease_model = pickle.load(open("C:/Users/HP/Desktop/Multiple Disease Prediction System/Heart_disease_model.sav", "rb"))
 
-parkinson_disease_model = pickle.load(open(r"C:/Users/HP/Desktop/Multiple Disease Prediction System/Parkinson_model.sav", "rb"))
+parkinson_disease_model = pickle.load(open("C:/Users/HP/Desktop/Multiple Disease Prediction System/Parkinson_model.sav", "rb"))
 
 
 #sidebar for navigation
@@ -147,7 +147,7 @@ if (selected == "Parkinson Prediction"):
     st.title("Parkinson Prediction Using ML")    
     
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1 :
         name = st.text_input("Name")
@@ -158,31 +158,31 @@ if (selected == "Parkinson Prediction"):
     with col3 :
         MDVP_Fhi_Hz = st.text_input("MDVP:Fhi(Hz)") 
 
-    with col1 :
+    with col4 :
         MDVP_Flo_Hz = st.text_input("MDVP:Flo(Hz)") 
 
-    with col2 :
+    with col1 :
         MDVP_Jitter = st.text_input("MDVP:Jitter(%)") 
 
-    with col3 :
+    with col2 :
         MDVP_Jitter_Abs = st.text_input("MDVP:Jitter(Abs)") 
     
-    with col1 :
+    with col3 :
         MDVP_RAP = st.text_input("MDVP:RAP") 
 
-    with col2 :
+    with col4 :
         MDVP_PPQ = st.text_input("MDVP:PPQ") 
         
-    with col3 :
+    with col1 :
         Jitter_DDP = st.text_input("Jitter:DDP") 
             
-    with col1 :
+    with col2 :
         MDVP_Shimmer = st.text_input("MDVP:Shimmer")         
 
-    with col2 :
+    with col3 :
         MDVP_Shimmer_dB = st.text_input("MDVP:Shimmer(dB)") 
     
-    with col3 :
+    with col4 :
         Shimmer_APQ3 = st.text_input("Shimmer:APQ3") 
         
     with col1 :
@@ -194,35 +194,35 @@ if (selected == "Parkinson Prediction"):
     with col3 :
         Shimmer_DDA	 = st.text_input("Shimmer:DDA")     
 
-    with col1 :
+    with col4 :
         NHR	 = st.text_input("NHR") 
 
-    with col2 :
+    with col1 :
         HNR	 = st.text_input("HNR")     
 
-    with col3 :
+    with col2 :
         RPDE	 = st.text_input("RPDE") 
 
-    with col1 :
+    with col3 :
         DFA	 = st.text_input("DFA") 
 
-    with col2 :
+    with col4 :
         spread1	 = st.text_input("Spread 1")
         
-    with col3 :
+    with col1 :
         spread2	 = st.text_input("Spread 2")
         
-    with col1 :
+    with col2 :
         D2	 = st.text_input("D2")
         
-    with col2 :
+    with col3 :
         PPE	 = st.text_input("PPE")
             
         
     parkinson_diagnosis = ''
 
     if st.button ('Parkinson Test Result'):
-        parkinson_prediction = parkinson_disease_model.predict([name, MDVP_Fo(Hz), MDVP_Fhi(Hz), MDVP_Flo(Hz), MDVP_Jitter, MDVP_Jitter(Abs), MDVP_RAP, MDVP_PPQ, Jitter_DDP, MDVP_Shimmer, MDVP_Shimmer(dB), Shimmer_APQ3, Shimmer_APQ5, MDVP_APQ, Shimmer_DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE])
+        parkinson_prediction = parkinson_disease_model.predict([name, MDVP_Fo_Hz, MDVP_Fhi_Hz, MDVP_Flo_Hz, MDVP_Jitter, MDVP_Jitter_Abs, MDVP_RAP, MDVP_PPQ, Jitter_DDP, MDVP_Shimmer, MDVP_Shimmer_dB, Shimmer_APQ3, Shimmer_APQ5, MDVP_APQ, Shimmer_DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE])
 
         if head_prediction[0] == 1:
             
