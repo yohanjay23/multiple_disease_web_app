@@ -129,9 +129,24 @@ if (selected == "Heart Disease Prediction"):
     heart_diagnosis = ''
 
     if st.button ('Heart Test Result'):
-        head_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chos, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
 
-        if head_prediction[0] == 1:
+        age = int(age)
+        sex = int(sex)
+        cp = int(cp)
+        trestbps = int(trestbps)
+        chos = int(chos)
+        fbs = int(fbs)
+        restecg = int(restecg)
+        thalach = int(thalach)
+        exang = int(exang)
+        oldpeak = float(oldpeak)
+        slope = int(slope)
+        ca = int(ca)
+        thal = int(thal)
+
+        heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chos, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+
+        if heart_prediction[0] == 1:
             
             heart_diagnosis = 'The person has not a heart disease'
             
